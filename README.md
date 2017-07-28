@@ -80,25 +80,25 @@ StartTime: Optional datetime (UTC) indicating time range of content to return
 		   Must also specify EndTime   
 		   
            Acceptable Formats: YYYY-MM-DD   
-					YYYY-MM-DDTHH:MM   
-					YYYY-MM-DDTHH:MM:SS   
+				YYYY-MM-DDTHH:MM   
+				YYYY-MM-DDTHH:MM:SS   
 							   
 EndTime:   Optional datetime (UTC) indicating time range of content to return   
            Must also specify StartTime   
 		   
            Acceptable Formats: YYYY-MM-DD   
-					YYYY-MM-DDTHH:MM   
-					YYYY-MM-DDTHH:MM:SS   
+				YYYY-MM-DDTHH:MM   
+				YYYY-MM-DDTHH:MM:SS   
 							   
 SubType:   Optional argument to specify which SubscriptionType to use   
            This does not change default SubscriptionType in config file   
 		   *Case Sensitive - Acceptable parameters below   
 		   
            Acceptable Types:
-		   AzureActiveDirectory
-		   Exchange   
-		   SharePoint   
-		   General
+				AzureActiveDirectory
+				Exchange   
+				SharePoint   
+				General
 
 Output:    Optional output argument to specify output file path and name    
            Application will automatically append .csv extension to file name;   
