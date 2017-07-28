@@ -80,23 +80,23 @@ StartTime: Optional datetime (UTC) indicating time range of content to return
 		   Must also specify EndTime   
 		   
            Acceptable Formats: YYYY-MM-DD   
-		                       YYYY-MM-DDTHH:MM    
-							   YYYY-MM-DDTHH:MM:SS   
+		   YYYY-MM-DDTHH:MM   
+		   YYYY-MM-DDTHH:MM:SS   
 							   
 EndTime:   Optional datetime (UTC) indicating time range of content to return   
            Must also specify StartTime   
 		   
            Acceptable Formats: YYYY-MM-DD   
-		                       YYYY-MM-DDTHH:MM   
-							   YYYY-MM-DDTHH:MM:SS   
+		   YYYY-MM-DDTHH:MM   
+		   YYYY-MM-DDTHH:MM:SS   
 							   
 SubType:   Optional argument to specify which SubscriptionType to use   
            This does not change default SubscriptionType in config file   
 		   *Case Sensitive - Acceptable parameters below   
 		   
            Acceptable Types:   
-		                     AzureActiveDirectory   
-							 Exchange    
+		                     AzureActiveDirectory
+							 Exchange   
 							 SharePoint   
 							 General
 
