@@ -79,16 +79,16 @@ ExchangeOnlineLogPull.exe starttime=YYYY-MM-DD endtime=YYYY-MM-DD subtype=Exchan
 StartTime: Optional datetime (UTC) indicating time range of content to return   
 		   Must also specify EndTime   
 		   
-           Acceptable Formats: YYYY-MM-DD   
-				YYYY-MM-DDTHH:MM   
-				YYYY-MM-DDTHH:MM:SS   
+           Acceptable Formats:	YYYY-MM-DD   
+					YYYY-MM-DDTHH:MM   
+					YYYY-MM-DDTHH:MM:SS   
 							   
 EndTime:   Optional datetime (UTC) indicating time range of content to return   
            Must also specify StartTime   
 		   
-           Acceptable Formats: YYYY-MM-DD   
-				YYYY-MM-DDTHH:MM   
-				YYYY-MM-DDTHH:MM:SS   
+           Acceptable Formats:	YYYY-MM-DD   
+					YYYY-MM-DDTHH:MM   
+					YYYY-MM-DDTHH:MM:SS   
 							   
 SubType:   Optional argument to specify which SubscriptionType to use   
            This does not change default SubscriptionType in config file   
@@ -120,7 +120,7 @@ Stop:      Optional argument to stop a subscription
 
 List:      Optional argument to list all subscriptions
 
-           Example: list subtype=SharePoint
+			Example: list subtype=SharePoint
 
-           The application will only execute one action argument.   
-		Priority - list, start, stop
+			The application will only execute one action argument.   
+			Priority - list, start, stop
