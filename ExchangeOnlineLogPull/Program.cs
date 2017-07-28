@@ -83,16 +83,30 @@ namespace ExchangeOnlineLogPull
                 {
                     // if start is set call StartSubscription, print response, and exit
                     // currently response is printing as empty
-                    var response = logPull.StartSubscription();
-                    Console.WriteLine(response);
+                    int response = logPull.StartSubscription();
+                    if (response == 1)
+                    {
+                        Console.WriteLine("Successfully Started Subscription");
+                    }
+                    else
+                    {
+                        Console.WriteLine("Failed To Start Subscription");
+                    }
                     Environment.Exit(0);
                 }
                 else if (arguments.ContainsKey("stop"))
                 {
                     // if stop is set call StartSubscription, print response, and exit
                     // currently response is printing as empty
-                    var response = logPull.StopSubscription();
-                    Console.WriteLine(response);
+                    int response = logPull.StopSubscription();
+                    if(response == 1)
+                    {
+                        Console.WriteLine("Successfully Stopped Subscription");
+                    }else
+                    {
+                        Console.WriteLine("Failed To Stop Subscription");
+                    }
+                    
                     Environment.Exit(0);
                 }
             }
