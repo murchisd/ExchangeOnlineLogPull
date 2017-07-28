@@ -120,7 +120,7 @@ Stop:      Optional argument to stop a subscription
 
 List:      Optional argument to list all subscriptions
 
-			Example: list subtype=SharePoint
+		Example: list subtype=SharePoint
 
-			The application will only execute one action argument.   
-			Priority - list, start, stop
+		The application will only execute one action argument.   
+		Priority - list, start, stop
