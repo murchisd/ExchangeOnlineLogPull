@@ -268,17 +268,22 @@ namespace ExchangeOnlineLogPull
             // If subtype was set, make sure it matches one of the acceptable Subscription Types
             // Currently case sensitive
             // Version 2 - make case insensitive
+            // Update - ToLower string then set to proper format - makes case insensitive
             if (arguments.ContainsKey("subtype"))
             {
-                switch (arguments["subtype"])
+                switch (arguments["subtype"].ToLower())
                 {
-                    case "AzureActiveDirectory":
+                    case "azureactivedirectory":
+                        arguments["subtype"] = "AzureActiveDirectory";
                         break;
-                    case "Exchange":
+                    case "exchange":
+                        arguments["subtype"] = "Exchange";
                         break;
-                    case "SharePoint":
+                    case "sharepoint":
+                        arguments["subtype"] = "SharePoint";
                         break;
-                    case "General":
+                    case "general":
+                        arguments["subtype"] = "General";
                         break;
                     default:
                         result = false;
