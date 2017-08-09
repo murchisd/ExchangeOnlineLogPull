@@ -150,6 +150,11 @@ namespace ExchangeOnlineLogPull
             Console.WriteLine("                               YYYY-MM-DDTHH:MM");
             Console.WriteLine("                               YYYY-MM-DDTHH:MM:SS");
             Console.WriteLine();
+            Console.WriteLine("Relative:  Optional argument to pull logs generated between the current time and X minutes before");
+            Console.WriteLine("           The same as setting EndTime to current time and StartTime to (current time - x minutes)");
+            Console.WriteLine();
+            Console.WriteLine("           Acceptable Values: 1 < X < 1440");
+            Console.WriteLine();
             Console.WriteLine("SubType:   Optional argument to specify which SubscriptionType to use");
             Console.WriteLine("           This does not change default SubscriptionType in config file");
             Console.WriteLine("           *Case Sensitive - Acceptable parameters below");
@@ -265,11 +270,45 @@ namespace ExchangeOnlineLogPull
                 }
             }
 
-            // If subtype was set, make sure it matches one of the acceptable Subscription Types
-            // Currently case sensitive
-            // Version 2 - make case insensitive
-            // Update - ToLower string then set to proper format - makes case insensitive
-            if (arguments.ContainsKey("subtype"))
+            //Relative time argument
+            if (arguments.ContainsKey("relative"))
+            {
+                int x = 0;
+                if (Int32.TryParse(arguments["relative"], out x))
+                {
+                    if(x > 1 && x < 1440)
+                    {
+                        DateTime endtime;
+                        DateTime starttime;
+                        endtime = DateTime.UtcNow;
+                        starttime = endtime.AddMinutes(x * -1);
+                        
+                        arguments["endtime"] = endtime.ToString("yyyy-MM-ddTHH:mm");
+                        arguments["starttime"] = starttime.ToString("yyyy-MM-ddTHH:mm");
+                        Console.WriteLine(arguments["endtime"] + " " + arguments["starttime"]);
+                    }
+                    else
+                    {
+                        Console.WriteLine("Relative must be between 1 and 1440");
+                        Console.WriteLine();
+                        result = false;
+                    }
+                    
+                }
+                else
+                {
+                    Console.WriteLine("Relative must be an integer");
+                    Console.WriteLine();
+                    result = false;
+                }
+            }
+           
+                
+                // If subtype was set, make sure it matches one of the acceptable Subscription Types
+                // Currently case sensitive
+                // Version 2 - make case insensitive
+                // Update - ToLower string then set to proper format - makes case insensitive
+                if (arguments.ContainsKey("subtype"))
             {
                 switch (arguments["subtype"].ToLower())
                 {
