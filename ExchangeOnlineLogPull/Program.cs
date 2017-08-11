@@ -1,4 +1,22 @@
-﻿using System;
+﻿/******************************
+ * ExchangeOnlineLogPull Application
+ * 
+ * Author:      Donald Murchison
+ *              Information Security Office 
+ *              Sacramento State University
+ * Date:        08/10/2017
+ * 
+ * Description: Console Application designed to use the ISOLogPullLibrary. The main purpose of this is to parse command line options
+ *              and call the appropriate methods in the ISOLogPullLibrary. Outputs a CSV file containing Online Office 365 logs for 
+ *              varying services. 
+ *               
+ * Usage:       ExchangeOnlineLogPull.exe 
+ * Help Menu:   ExchangeOnlineLogPull.exe help
+ * 
+ * *****************************/
+
+
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
